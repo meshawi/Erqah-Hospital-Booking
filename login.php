@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $user_id = $_POST['user_id'];
   $password = $_POST['password'];
 
-  $sql = "SELECT id, password FROM users WHERE user_id = '$user_id'";
+  $sql = "SELECT id, password FROM users WHERE user_id = '$user_id' AND user_id = 'admin'";
   $result = $conn->query($sql);
 
   if ($result->num_rows > 0) {
@@ -54,9 +54,9 @@ $conn->close();
     <h2> صفحة تسجيل الدخول</h2>
     <form action="login.php" method="POST">
       <label for="user_id">اسم المستخدم</label>
-      <input type="text" name="user_id" placeholder=" ادخل اسم المستخدم" required>
+      <input type="text" name="user_id" placeholder=" ادخل اسم المستخدم" required value="admin">
       <label for="password">كلمة المرور</label>
-      <input type="password" name="password" placeholder="ادخل كلمة المرور" required>
+      <input type="password" name="password" placeholder="ادخل كلمة المرور" required value="admin">
       <button type="submit" class="btn">تسجيل الدخول</button>
       <a class="forgot" href="SignUp.php">لم تنشئ حساب ؟</a>
     </form>

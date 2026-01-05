@@ -13,7 +13,7 @@ if (isset($_GET['doctor_id'])) {
     $sql = "INSERT INTO appointments (user_id, doctor_id, appointment_time) VALUES ('$user_id', '$doctor_id', '$appointment_date')";
 
     if ($conn->query($sql) === TRUE) {
-        echo "Appointment booked successfully for " . $appointment_date . ".";
+        // echo "Appointment booked successfully for " . $appointment_date . ".";
         header('Location: profile.php');
     } else {
         echo "Error booking appointment: " . $conn->error;

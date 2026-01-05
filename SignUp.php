@@ -2,6 +2,15 @@
 include 'config.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Demo mode: Disable sign up
+    echo "<script>
+            alert('Demo mode: Sign up is disabled. Please use the demo credentials: admin/admin');
+            window.location.href = 'login.php';
+          </script>";
+    exit;
+    
+    // Original code commented out for demo
+    /*
     $user_id = $_POST['user_id'];
     $email = $_POST['Email'];
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
@@ -25,6 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 alert('Error: " . $sql . "<br>" . $conn->error . "');
               </script>";
     }
+    */
 }
 
 $conn->close();
