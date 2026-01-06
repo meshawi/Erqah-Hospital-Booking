@@ -10,8 +10,8 @@ $user = getenv('DB_USER') ?: 'root';
 $pass = getenv('DB_PASSWORD') ?: '';
 $dbname = getenv('DB_NAME') ?: 'hospital_reservation_db';
 
-// Wait for MySQL to be ready (max 30 seconds)
-$maxRetries = 30;
+// Wait for MySQL to be ready (max 60 seconds)
+$maxRetries = 60;
 $retries = 0;
 $conn = null;
 
